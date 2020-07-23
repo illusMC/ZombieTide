@@ -1,0 +1,6 @@
+name: ZombieTide
+main: pw.illusion.zombietide.Main
+version: ${version}
+api-version: '1.13'
+author: Yoooooory
+depend: [RandEvent]
