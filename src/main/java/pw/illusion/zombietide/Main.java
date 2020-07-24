@@ -58,12 +58,13 @@ public class Main extends JavaPlugin implements Listener {
     void summonZombies(Player player) {
         Location loc = player.getLocation();
         int debug=0;
+        long time=System.currentTimeMillis();
         do {
             debug++;
             loc.add(Vector.getRandom()).setY(getY(loc, player));
         }
         while(loc.distance(player.getLocation())<5 || loc.distance(player.getLocation())>15 && canBeOnGround(loc));
-        getLogger().info("DEBUGGING : loop for "+debug+" times!");
+        getLogger().info("DEBUGGING : loop for "+debug+" times! Take "+(System.currentTimeMillis()-time)+"ms.");
         loc.getWorld().spawnEntity(loc, EntityType.ARMOR_STAND);
     }
     double getY(Location loc,Player player){
